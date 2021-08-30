@@ -1,0 +1,12 @@
+header{
+    display: flex;
+    margin-top: 31px;
+}
+
+h1{
+    color: white;
+    font-size: 2rem;
+    line-height: 39px;
+    font-style: normal;
+    font-weight: bold;
+}
