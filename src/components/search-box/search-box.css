@@ -5,6 +5,7 @@
     border-radius: 15px;
     margin-top: 36px;
     padding: 7px;
+    align-items: center;
 }
 
 .search__button {
@@ -21,13 +22,18 @@
 .search__input {
     width: 100%;
     background: #1E2A47;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     line-height: 25px;
     font-style: normal;
     font-weight: normal;
     font-family: "Space Mono", sans-serif;
     color: white;
     border: none;
+    margin-left: 5px;
+}
+
+.search__input:focus {
+    outline: none;
 }
 
 ::placeholder {

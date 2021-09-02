@@ -1,12 +1,11 @@
 .user-info--container{
     margin-top: 16px;
-    display: flex;
+    display: none;
     flex-direction: column;
     background-color: #1E2A47;
     border-radius: 15px;
     height: auto;
-    padding-left: 24px;
-    padding-right: 24px;
+    padding: 0 24px 30px;
 }
 
 .user-info--title{
@@ -35,7 +34,7 @@
 
 .user-info--name{
     display: flex;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: bold;
     color: white;
 }
@@ -48,4 +47,54 @@
 .user-info--joined{
     margin-top: 6px;
     color: white;
+    font-size: 1.1rem;
+}
+
+.user-info--statics{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #141D2F;
+    padding: 18px 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.user-info--statics__number{
+    color: white;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+.user-info--statics__title{
+    font-size: 1rem;
+    font-style: normal;
+    color: white;
+    line-height: 16px;
+}
+
+.user-info__bio{
+    margin-top: 30px;
+}
+
+.user-info__social-network{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.social-network__title{
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 19px;
+    color: white;
+    margin-left: 10px;
+}
+
+.social-network__container {
+    display: flex;
+    margin-bottom: 5px;
 }

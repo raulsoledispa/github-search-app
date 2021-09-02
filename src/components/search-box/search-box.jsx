@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from "react";
 import './search-box.css';
 import {Octokit} from "@octokit/core";
+import { FaSearch } from "react-icons/fa";
 
 export const SearchBox = ({ query, setQuery, setData}) => {
     async function fetchData() {
-        const octokit = new Octokit({ auth: `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` });
+        const octokit = new Octokit({ auth: `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` });
         try {
             const response = await octokit.request("GET /users/{username}", {
                 username: query
@@ -13,6 +13,7 @@ export const SearchBox = ({ query, setQuery, setData}) => {
 
             setData(response.data);
         }catch (e){
+            setData({});
             console.error(e.message);
         }
     }
@@ -24,6 +25,7 @@ export const SearchBox = ({ query, setQuery, setData}) => {
 
   return(
       <div className="search">
+          <span><FaSearch size="19px"  color="#0079FF" /></span>
           <input className="search__input"
                  value={query}
                  onChange={e => handleChange(e.target.value)}

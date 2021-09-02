@@ -15,7 +15,7 @@ function App() {
     <div className="App">
       <Header />
       <SearchBox query={query} setQuery={setQuery} data={data} setData={setData} />
-      <UserInfo data={data} />
+      <UserInfo data={data} isVisible={ Object.keys(data).length ? "flex" : "none"} />
     </div>
   );
 }
