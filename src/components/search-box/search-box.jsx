@@ -2,9 +2,9 @@ import './search-box.css';
 import {Octokit} from "@octokit/core";
 import { FaSearch } from "react-icons/fa";
 
-export const SearchBox = ({ query, setQuery, setData}) => {
+export const SearchBox = ({ query, setQuery, setData, isVisible}) => {
     async function fetchData() {
-        const octokit = new Octokit({ auth: `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` });
+        const octokit = new Octokit({ auth: `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` });
         try {
             const response = await octokit.request("GET /users/{username}", {
                 username: query
@@ -32,6 +32,7 @@ export const SearchBox = ({ query, setQuery, setData}) => {
                  id="inp-value"
                  type="search"
                  placeholder="Search GitHub username..."/>
+          <span style={ {display: isVisible}}><p>Not result</p></span>
           <button onClick={fetchData} className="search__button">Search</button>
       </div>
   )

@@ -5,7 +5,6 @@ import { FaBuilding, FaTwitter } from "react-icons/fa";
 
 
 export const UserInfo = ({ data, isVisible }) => {
-    console.log(isVisible)
   return (
       <div style={ {display: isVisible}} className="user-info--container">
 
@@ -19,13 +18,13 @@ export const UserInfo = ({ data, isVisible }) => {
         </div>
 
         <div className="user-info__bio">
-          Bla bla bla bla
+            { data.bio }
         </div>
 
         <div className="user-info--statics">
           <div className="user-info--repos">
             <p className="user-info--statics__title">Repos</p>
-            <p className="user-info--statics__number">{data.total_private_repos}</p>
+            <p className="user-info--statics__number">{data.public_repos}</p>
           </div>
           <div className="user-info--followers">
             <p className="user-info--statics__title">Followers</p>
