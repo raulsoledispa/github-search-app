@@ -4,7 +4,7 @@ import { FaSearch } from "react-icons/fa";
 
 export const SearchBox = ({ query, setQuery, setData, isVisible}) => {
     async function fetchData() {
-        const octokit = new Octokit({ auth: `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` });
+        const octokit = new Octokit({ auth: `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` });
         try {
             const response = await octokit.request("GET /users/{username}", {
                 username: query
