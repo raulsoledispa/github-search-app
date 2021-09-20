@@ -1,11 +1,11 @@
 import React from "react";
-
+import { Wrapper, Title } from "./header.styles"
 import "./header.css";
 
 export const Header = () => {
   return (
-      <header>
-          <h1>devfinder</h1>
-      </header>
+      <Wrapper>
+          <Title>devfinder</Title>
+      </Wrapper>
   )
 }

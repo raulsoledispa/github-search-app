@@ -10,12 +10,11 @@ function App() {
 
     const [data, setData] = useState({ });
     const [query, setQuery] = useState('');
-
   return (
     <div className="App">
       <Header />
-      <SearchBox query={query} setQuery={setQuery} data={data} setData={setData} />
-      <UserInfo data={data} isVisible={ Object.keys(data).length ? "flex" : "none"} />
+      <SearchBox query={query} setQuery={setQuery} data={data} setData={setData} isVisible={ Object.keys(data).length ? "none" : "inline-block" } />
+      <UserInfo data={data} isVisible={ Object.keys(data).length  ? "flex" : "none" } />
     </div>
   );
 }

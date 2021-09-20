@@ -1,21 +1,22 @@
 import React from "react";
 import "./user-info.css";
+import { Wrapper, TitleContainer, FullName, UserName, Joined } from "./user-info.styles"
 import { GoLocation, GoLink } from "react-icons/go";
 import { FaBuilding, FaTwitter } from "react-icons/fa";
 
 
 export const UserInfo = ({ data, isVisible }) => {
   return (
-      <div style={ {display: isVisible}} className="user-info--container">
+      <Wrapper isVisible={isVisible}>
 
-        <div className="user-info--title">
+        <TitleContainer>
           <img src={data.avatar_url} alt="Avatar" />
-          <div className="user-info--principal">
-            <p className="user-info--name">{data.name}</p>
-            <p className="user-info--username">{data.username}</p>
-            <p className="user-info--joined">Joined {data.created_at}</p>
+          <div>
+            <FullName>{data.name}</FullName>
+            <UserName>@{data.login}</UserName>
+            <Joined>Joined {data.created_at}</Joined>
           </div>
-        </div>
+        </TitleContainer>
 
         <div className="user-info__bio">
             { data.bio }
@@ -51,6 +52,6 @@ export const UserInfo = ({ data, isVisible }) => {
           </div>
         </div>
 
-      </div>
+      </Wrapper>
   )
 }

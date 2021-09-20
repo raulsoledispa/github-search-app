@@ -12,7 +12,7 @@
     margin-top: 32px;
 }
 
-.user-info--container img {
+img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -33,7 +33,6 @@
 
 
 .user-info--name{
-    display: flex;
     font-size: 1.4rem;
     font-weight: bold;
     color: white;

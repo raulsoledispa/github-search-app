@@ -1,10 +1,15 @@
-import './search-box.css';
+/*import './search-box.css';*/
+import  { Input, SearchButton, Wrapper, AlertResult} from "./search-box.styles.jsx"
 import {Octokit} from "@octokit/core";
 import { FaSearch } from "react-icons/fa";
 
-export const SearchBox = ({ query, setQuery, setData, isVisible}) => {
+export const SearchBox = ({ query, setQuery, setData}) => {
+
+    const isVisible = (data) => Object.keys(data).length ? "none" : "inline-block";
+
+
     async function fetchData() {
-        const octokit = new Octokit({ auth: `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` });
+        const octokit = new Octokit({ auth: `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` });
         try {
             const response = await octokit.request("GET /users/{username}", {
                 username: query
@@ -13,7 +18,7 @@ export const SearchBox = ({ query, setQuery, setData, isVisible}) => {
 
             setData(response.data);
         }catch (e){
-            setData({});
+           // setData({});
             console.error(e.message);
         }
     }
@@ -24,16 +29,16 @@ export const SearchBox = ({ query, setQuery, setData, isVisible}) => {
 
 
   return(
-      <div className="search">
+      <Wrapper>
           <span><FaSearch size="19px"  color="#0079FF" /></span>
-          <input className="search__input"
+          <Input
                  value={query}
                  onChange={e => handleChange(e.target.value)}
                  id="inp-value"
                  type="search"
                  placeholder="Search GitHub username..."/>
-          <span style={ {display: isVisible}}><p>Not result</p></span>
-          <button onClick={fetchData} className="search__button">Search</button>
-      </div>
+          <AlertResult isVisible={isVisible}><p>Not result</p></AlertResult>
+          <SearchButton onClick={fetchData} >Search</SearchButton>
+      </Wrapper>
   )
 }
