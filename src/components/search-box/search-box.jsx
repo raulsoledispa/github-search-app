@@ -1,14 +1,14 @@
 import  { Input, SearchButton, Wrapper, AlertResult} from "./search-box.styles.jsx"
 import {Octokit} from "@octokit/core";
 import { FaSearch } from "react-icons/fa";
-
+import process from "process";
 export const SearchBox = ({ query, setQuery, setData}) => {
 
     const isVisible = (data) => Object.keys(data).length ? "none" : "inline-block";
 
 
     async function fetchData() {
-        const octokit = new Octokit({ auth: `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` });
+        const octokit = new Octokit({ auth: process.env.TOKEN });
         try {
             const response = await octokit.request("GET /users/{username}", {
                 username: query
