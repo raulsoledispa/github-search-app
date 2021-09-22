@@ -1,4 +1,3 @@
-/*import './search-box.css';*/
 import  { Input, SearchButton, Wrapper, AlertResult} from "./search-box.styles.jsx"
 import {Octokit} from "@octokit/core";
 import { FaSearch } from "react-icons/fa";
@@ -9,7 +8,7 @@ export const SearchBox = ({ query, setQuery, setData}) => {
 
 
     async function fetchData() {
-        const octokit = new Octokit({ auth: `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` });
+        const octokit = new Octokit({ auth: `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` });
         try {
             const response = await octokit.request("GET /users/{username}", {
                 username: query
@@ -18,7 +17,7 @@ export const SearchBox = ({ query, setQuery, setData}) => {
 
             setData(response.data);
         }catch (e){
-           // setData({});
+            setData({});
             console.error(e.message);
         }
     }

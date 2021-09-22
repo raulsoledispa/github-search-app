@@ -8,13 +8,20 @@ export const GlobalStyles = createGlobalStyle`
 }
 
 html {
-  font-family: sans-serif;
+  font-family: "Space Mono", sans-serif;
   font-size: 62.5%;
 }
 
 body {
-  background-color: var(--primary-color);
+  background-color: #141D2F;
   padding-left: 24px;
   padding-right: 24px;
+  font-size: 1.3rem;
+
+  @media( min-width: 768px){
+    padding-left: 97px;
+    padding-right: 97px;
+    font-size: 1.5rem;
+  }
 }
 `;

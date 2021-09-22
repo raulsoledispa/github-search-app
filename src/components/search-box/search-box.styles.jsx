@@ -14,14 +14,17 @@ export const Wrapper = styled.div`
 export const Input = styled.input`
   width: 100%;
   background: #1E2A47;
-  font-size: 1.2rem;
   line-height: 25px;
   font-style: normal;
   font-weight: normal;
-  font-family: "Space Mono", sans-serif;
   color: white;
   border: none;
   margin-left: 5px;
+
+  @media( min-width: 768px){
+    font-size: 1.8rem;
+    margin-left: 15px;
+  }
 `;
 
 export const SearchButton = styled.button`

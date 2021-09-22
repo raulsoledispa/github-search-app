@@ -2,13 +2,13 @@ import styled from "styled-components";
 
 export const Wrapper = styled.header`
   display: flex;
-  height: auto;
-  width: 100%;
+  margin-top: 31px;
 `
 
 export const Title = styled.h1`
-  display: flex;
-  height: auto;
-  width: 100%;
-  font-size: 2.6rem;
+  color: white;
+  font-size: 2rem;
+  line-height: 39px;
+  font-style: normal;
+  font-weight: bold;
 `

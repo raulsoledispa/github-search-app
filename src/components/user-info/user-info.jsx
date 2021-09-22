@@ -1,6 +1,6 @@
 import React from "react";
 import "./user-info.css";
-import { Wrapper, TitleContainer, FullName, UserName, Joined } from "./user-info.styles"
+import { Wrapper, TitleContainer, FullName, UserName, Joined, SocialNetworkContainer, Avatar, StatisticsContainer } from "./user-info.styles"
 import { GoLocation, GoLink } from "react-icons/go";
 import { FaBuilding, FaTwitter } from "react-icons/fa";
 
@@ -10,7 +10,7 @@ export const UserInfo = ({ data, isVisible }) => {
       <Wrapper isVisible={isVisible}>
 
         <TitleContainer>
-          <img src={data.avatar_url} alt="Avatar" />
+          <Avatar src={data.avatar_url} alt="Avatar" />
           <div>
             <FullName>{data.name}</FullName>
             <UserName>@{data.login}</UserName>
@@ -22,35 +22,35 @@ export const UserInfo = ({ data, isVisible }) => {
             { data.bio }
         </div>
 
-        <div className="user-info--statics">
-          <div className="user-info--repos">
+        <StatisticsContainer>
+          <div>
             <p className="user-info--statics__title">Repos</p>
             <p className="user-info--statics__number">{data.public_repos}</p>
           </div>
-          <div className="user-info--followers">
+          <div>
             <p className="user-info--statics__title">Followers</p>
             <p className="user-info--statics__number">{data.followers}</p>
           </div>
-          <div className="user-info--following">
+          <div>
             <p className="user-info--statics__title">Following</p>
             <p className="user-info--statics__number">{data.following}</p>
           </div>
-        </div>
+        </StatisticsContainer>
 
-        <div className="user-info__social-network">
-          <div className="social-network__container">
-            <span><GoLocation size="15px" color="white" /></span> <p className="social-network__title">{ data.location }</p>
+        <SocialNetworkContainer>
+          <div>
+            <span><GoLocation size="15px" color="white" /></span> <p>{ data.location }</p>
           </div>
-          <div className="social-network__container">
-              <span><GoLink size="15px" color="white" /></span> <p className="social-network__title">{ data.html_url || "Not Available"}</p>
+          <div>
+              <span><GoLink size="15px" color="white" /></span> <p>{ data.html_url || "Not Available"}</p>
           </div>
-          <div className="social-network__container">
-              <span><FaTwitter size="15px" color="white" /></span> <p className="social-network__title">{ data.twitter_username || "Not Available"}</p>
+          <div>
+              <span><FaTwitter size="15px" color="white" /></span> <p>{ data.twitter_username || "Not Available"}</p>
           </div>
-          <div className="social-network__container">
-              <span><FaBuilding size="15px" color="white" /></span> <p className="social-network__title">@github</p>
+          <div>
+              <span><FaBuilding size="15px" color="white" /></span> <p>@github</p>
           </div>
-        </div>
+        </SocialNetworkContainer>
 
       </Wrapper>
   )
