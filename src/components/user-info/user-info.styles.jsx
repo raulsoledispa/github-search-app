@@ -2,14 +2,13 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   margin-top: 16px;
-  display: ${ props => props.isVisible ?? "none" };
+  display: ${ props => props.isVisible ?? "block" };
   flex-direction: column;
-  background-color: #1E2A47;
+  background-color: ${ ({ theme }) => theme.section};
   border-radius: 15px;
   height: auto;
   padding: 0 24px 30px;
-  
-  
+  color: ${ ({ theme }) => theme.textSecondary};
 `;
 
 export const TitleContainer = styled.div`
@@ -28,6 +27,7 @@ export const TitleContainer = styled.div`
 export const Avatar = styled.img`
   height: 70px;
   width: 70px;
+  border-radius: 50px 50px;
 
   @media( min-width: 768px){
     height: 117px;
@@ -40,7 +40,6 @@ export const Avatar = styled.img`
 export const FullName = styled.p`
   font-size: 1.6rem;
   font-weight: bold;
-  color: white;
 `;
 
 export const UserName = styled.p`
@@ -50,8 +49,12 @@ export const UserName = styled.p`
 
 export const Joined = styled.p`
   margin-top: 6px;
-  color: white;
   font-size: 1.1rem;
+`;
+
+
+export const Resume = styled.p`
+  margin-top: 30px;
 `;
 
 
@@ -59,7 +62,7 @@ export const StatisticsContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  background-color: #141D2F;
+  background-color: ${ ({ theme }) => theme.body};
   padding: 18px 15px;
   border-radius: 10px;
   margin-top: 20px;
@@ -98,8 +101,13 @@ export const SocialNetworkContainer = styled.div`
   p{
     font-weight: normal;
     line-height: 19px;
-    color: white;
+    color: ${ ({ theme }) => theme.textSecondary};
     margin-left: 10px;
+  }
+  
+  svg{
+    color: ${ ({ theme }) => theme.textSecondary};
+    size: 15px;
   }
   
   @media( min-width: 768px){

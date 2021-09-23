@@ -35,6 +35,7 @@ export const SearchBox = ({ query, setQuery, setData}) => {
                  onChange={e => handleChange(e.target.value)}
                  id="inp-value"
                  type="search"
+                 autoComplete="on"
                  placeholder="Search GitHub username..."/>
           <AlertResult isVisible={isVisible}><p>Not result</p></AlertResult>
           <SearchButton onClick={fetchData} >Search</SearchButton>

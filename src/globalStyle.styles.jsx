@@ -13,10 +13,11 @@ html {
 }
 
 body {
-  background-color: #141D2F;
+  background-color: ${ ({ theme }) => theme.body};
   padding-left: 24px;
   padding-right: 24px;
   font-size: 1.3rem;
+  transition: all 0.25s linear;
 
   @media( min-width: 768px){
     padding-left: 97px;

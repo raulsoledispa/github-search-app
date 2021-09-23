@@ -1,6 +1,6 @@
 import React from "react";
-import "./user-info.css";
-import { Wrapper, TitleContainer, FullName, UserName, Joined, SocialNetworkContainer, Avatar, StatisticsContainer } from "./user-info.styles"
+//import "./user-info.css";
+import { Wrapper, TitleContainer, FullName, UserName, Joined, SocialNetworkContainer, Avatar, StatisticsContainer, Resume } from "./user-info.styles"
 import { GoLocation, GoLink } from "react-icons/go";
 import { FaBuilding, FaTwitter } from "react-icons/fa";
 
@@ -18,9 +18,9 @@ export const UserInfo = ({ data, isVisible }) => {
           </div>
         </TitleContainer>
 
-        <div className="user-info__bio">
+        <Resume>
             { data.bio }
-        </div>
+        </Resume>
 
         <StatisticsContainer>
           <div>
@@ -39,16 +39,16 @@ export const UserInfo = ({ data, isVisible }) => {
 
         <SocialNetworkContainer>
           <div>
-            <span><GoLocation size="15px" color="white" /></span> <p>{ data.location }</p>
+            <span><GoLocation /></span> <p>{ data.location }</p>
           </div>
           <div>
-              <span><GoLink size="15px" color="white" /></span> <p>{ data.html_url || "Not Available"}</p>
+              <span><GoLink/></span> <p>{ data.html_url || "Not Available"}</p>
           </div>
           <div>
-              <span><FaTwitter size="15px" color="white" /></span> <p>{ data.twitter_username || "Not Available"}</p>
+              <span><FaTwitter /></span> <p>{ data.twitter_username || "Not Available"}</p>
           </div>
           <div>
-              <span><FaBuilding size="15px" color="white" /></span> <p>@github</p>
+              <span><FaBuilding /></span> <p>@github</p>
           </div>
         </SocialNetworkContainer>
 

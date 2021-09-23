@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 
 export const Wrapper = styled.div`
-  background-color: #1E2A47;
+  background-color: ${ ({ theme }) => theme.section};
   display: flex;
   justify-content: space-between;
   border-radius: 15px;
@@ -13,13 +13,18 @@ export const Wrapper = styled.div`
 
 export const Input = styled.input`
   width: 100%;
-  background: #1E2A47;
+  background: ${ ({ theme }) => theme.section};
+  font-size: 1.3rem;
   line-height: 25px;
   font-style: normal;
   font-weight: normal;
-  color: white;
+  color: ${ ({ theme }) => theme.textSecondary};
   border: none;
   margin-left: 5px;
+  
+  :focus{
+    outline: none;
+  }
 
   @media( min-width: 768px){
     font-size: 1.8rem;
