@@ -9,7 +9,7 @@ export const Wrapper = styled.header`
 
 export const Title = styled.h1`
   color: ${ ({ theme }) => theme.headerTextColor};
-  font-size: 2rem;
+  font-size: 2.6rem;
   line-height: 39px;
   font-style: normal;
   font-weight: bold;

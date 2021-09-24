@@ -6,6 +6,12 @@ import { FaBuilding, FaTwitter } from "react-icons/fa";
 
 
 export const UserInfo = ({ data, isVisible }) => {
+
+    const format = (dateStr) => {
+        if(!dateStr) return null;
+        return new Intl.DateTimeFormat('en-US', { dateStyle: "medium"}).format(new Date(dateStr))
+    }
+
   return (
       <Wrapper isVisible={isVisible}>
 
@@ -14,7 +20,7 @@ export const UserInfo = ({ data, isVisible }) => {
           <div>
             <FullName>{data.name}</FullName>
             <UserName>@{data.login}</UserName>
-            <Joined>Joined {data.created_at}</Joined>
+            <Joined>Joined {format(data.created_at)}</Joined>
           </div>
         </TitleContainer>
 
@@ -24,16 +30,16 @@ export const UserInfo = ({ data, isVisible }) => {
 
         <StatisticsContainer>
           <div>
-            <p className="user-info--statics__title">Repos</p>
-            <p className="user-info--statics__number">{data.public_repos}</p>
+            <p>Repos</p>
+            <p>{data.public_repos}</p>
           </div>
           <div>
-            <p className="user-info--statics__title">Followers</p>
-            <p className="user-info--statics__number">{data.followers}</p>
+            <p>Followers</p>
+            <p>{data.followers}</p>
           </div>
           <div>
-            <p className="user-info--statics__title">Following</p>
-            <p className="user-info--statics__number">{data.following}</p>
+            <p>Following</p>
+            <p>{data.following}</p>
           </div>
         </StatisticsContainer>
 
@@ -42,13 +48,13 @@ export const UserInfo = ({ data, isVisible }) => {
             <span><GoLocation /></span> <p>{ data.location }</p>
           </div>
           <div>
-              <span><GoLink/></span> <p>{ data.html_url || "Not Available"}</p>
+              <span><GoLink/></span> <p>{ data.blog || "Not Available"}</p>
           </div>
           <div>
               <span><FaTwitter /></span> <p>{ data.twitter_username || "Not Available"}</p>
           </div>
           <div>
-              <span><FaBuilding /></span> <p>@github</p>
+              <span><FaBuilding /></span> <p>{ data.company || "@github"}</p>
           </div>
         </SocialNetworkContainer>
 

@@ -8,7 +8,6 @@ export const Header = ({getTheme, setTheme}) => {
     setTheme(newTheme);
   }
 
-  console.log(getTheme)
   return (
       <Wrapper>
           <div>

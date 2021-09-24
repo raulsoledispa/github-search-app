@@ -27,7 +27,7 @@ export const TitleContainer = styled.div`
 export const Avatar = styled.img`
   height: 70px;
   width: 70px;
-  border-radius: 50px 50px;
+  border-radius: 50%;
 
   @media( min-width: 768px){
     height: 117px;
@@ -37,9 +37,13 @@ export const Avatar = styled.img`
 `;
 
 
-export const FullName = styled.p`
+export const FullName = styled.h2`
   font-size: 1.6rem;
   font-weight: bold;
+
+  @media( min-width: 768px){
+    font-size: 2.6rem;
+  }
 `;
 
 export const UserName = styled.p`
@@ -66,11 +70,27 @@ export const StatisticsContainer = styled.div`
   padding: 18px 15px;
   border-radius: 10px;
   margin-top: 20px;
+  text-align: center;
+  div p:nth-child(1) {
+    font-size: 1.1rem;
+    font-style: normal;
+    color: ${ ({theme}) => theme.textSecondary};
+    line-height: 16px;
+  }
+
+  div p:nth-child(2) {
+    color: ${ ({theme}) => theme.textSecondary};
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.6rem;
+  }
+  
   /*
   div{
     display: flex;
     margin-bottom: 5px;
   }
+  
   
   p{
     font-weight: normal;

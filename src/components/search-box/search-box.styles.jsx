@@ -18,13 +18,20 @@ export const Input = styled.input`
   line-height: 25px;
   font-style: normal;
   font-weight: normal;
-  color: ${ ({ theme }) => theme.textSecondary};
+  color: ${ ({ theme }) => theme.headerTextColor};
   border: none;
   margin-left: 5px;
+  
+  ::placeholder{
+    font-size: 1.3rem;
+    color: ${ ({ theme }) => theme.textSecondary}; 
+  }
   
   :focus{
     outline: none;
   }
+  
+  
 
   @media( min-width: 768px){
     font-size: 1.8rem;
@@ -41,6 +48,7 @@ export const SearchButton = styled.button`
   font-size: 1.4rem;
   color: white;
   border: none;
+  cursor: pointer;
 `;
 
 
