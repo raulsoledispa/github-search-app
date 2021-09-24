@@ -50,4 +50,3 @@ export const AlertResult = styled.span`
   font-weight: bold;
   margin-right: 2px;
 `;
-

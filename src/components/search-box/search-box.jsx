@@ -1,6 +1,7 @@
 import  { Input, SearchButton, Wrapper, AlertResult} from "./search-box.styles.jsx"
 import {Octokit} from "@octokit/core";
 import { FaSearch } from "react-icons/fa";
+
 import process from "process";
 export const SearchBox = ({ query, setQuery, setData}) => {
 

@@ -1,15 +1,26 @@
 import React from "react";
-import { Wrapper, Title } from "./header.styles"
+import { Wrapper, Title, ToggleContainer } from "./header.styles"
+import { FaMoon, FaRegSun } from "react-icons/fa";
 
-export const Header = ({theme, setTheme}) => {
+export const Header = ({getTheme, setTheme}) => {
   const changeTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
+    const newTheme = getTheme === "light" ? "dark" : "light";
     setTheme(newTheme);
   }
+
+  console.log(getTheme)
   return (
       <Wrapper>
-          <Title>devfinder</Title>
-          <button onClick={changeTheme}>Click</button>
+          <div>
+              <Title>devfinder</Title>
+          </div>
+          <div>
+              <ToggleContainer getTheme={getTheme} onClick={changeTheme}>
+                  {getTheme === "light" ? "DARK" : "LIGHT"}
+                  <FaMoon />
+                  <FaRegSun/>
+              </ToggleContainer>
+          </div>
       </Wrapper>
   )
 }

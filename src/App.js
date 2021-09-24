@@ -25,12 +25,12 @@ function App() {
 
     const [data, setData] = useState({ });
     const [query, setQuery] = useState("");
-    const [theme, setTheme] = useState("light")
+    const [getTheme, setTheme] = useState("light")
   return (
-      <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+      <ThemeProvider theme={getTheme === 'light' ? lightTheme : darkTheme}>
           <>
               <GlobalStyles/>
-              <Header theme={theme} setTheme={setTheme} />
+              <Header getTheme={getTheme} setTheme={setTheme} />
               <SearchBox query={query} setQuery={setQuery} data={data} setData={setData} isVisible={ Object.keys(data).length ? "none" : "inline-block" } />
               <UserInfo data={data} isVisible={ Object.keys(data).length  ? "flex" : "none" } />
           </>
