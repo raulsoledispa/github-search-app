@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://raulsoledispa.github.io/github-search-app",
   "dependencies": {
-    "@octokit/core": "^3.5.1",
+    "@octokit/core": "^3.6.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
